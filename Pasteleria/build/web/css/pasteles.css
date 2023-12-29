@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Lora:ital,wght@0,400;1,400;1,500;1,600&display=swap');
+
+body{
+    font-family: 'Lora', serif;
+    /*font-family: 'Dancing Script', cursive;*/
+    background-color: #f8f9f4;
+}
+
+header{
+    background: linear-gradient(90deg, #e5d5c8, #e3d3c6);
+    width: 100%;
+    height: 70px;
+    margin: 0;
+}
+/*
+.cent-v-h{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+*/
+.cent-v{
+    display:flex;
+    align-items: center;
+}
+
+#imagen-logo{
+    border-radius: 10px;
+}
+
+#espaciologo{
+    margin-left: 50px;
+}
+
+.navbar{
+    height: 75px;
+    margin: 0 30px 0 30px;
+}
+
+.navbar-nav{
+    margin-left: auto;
+}
+
+.nav-link{
+    font-size: 20px;
+}
+
+.nav-item{
+    margin-right: 60px;
+}
+
+.centrado-simple{
+    text-align: center;
+}
+
+.svg-alineacion{
+    vertical-align: top;
+}
+
+#img-prin{
+    width: 100%;
+    height: 90vh;
+    background: url(../img/pastel-presentacion.jpg) center center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-attachment: fixed;
+}
+
+#img-prin-tex{
+    background-color: rgba(0, 0, 0, 0.37); /* Fondo oscuro semitransparente */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#img-prin-tex h2{
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px black;
+}
+
+#img-prin-tex h2 {
+    color: white;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+}
+
+#img-prin-tex h2:first-of-type {
+    font-size: 5vw;
+    font-weight: 600;
+    text-shadow: 1px 1px 4px black;
+}
+
+#img-prin-tex h2:nth-of-type(2) {
+    font-size: 3vw;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px black;
+}
+
+#anunciossec{
+    background-color: #e3e5dc;
+}
+
+#h3-pasteles{
+    font-family: 'Dancing Script', cursive;
+    color: rgb(100, 100, 100);
+    text-align: center;
+    font-size: 3vw;
+}
+
+.home-demo{
+    padding-top: 40px;
+}
+
+.row{
+    --bs-gutter-x: 0 !important;
+}
+
+.tarjeta{
+    width: 85%;
+}
+
+.owl-stage-outer{
+    height: 280px;
+}
+
+.owl-nav.disabled {
+    display: block !important;
+}
+
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot {
+    font-size: 50px !important;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.foot{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#pie{
+    background: linear-gradient(90deg, #dfcdbf, #866053);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 70px;
+    margin: 0;
+}
+
+.disflex{
+    display: flex;
+    align-items: center;
+}
+
+.pie-der{
+    margin-left: auto;
+}
+
+.pie-der p{
+    margin-bottom: 0;
+}
+
+.contactoh2{
+    color: black;
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+
+.contacto{
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+.contacto p{
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+
+.espaciocontacto{
+    padding-top: 60px;
+}
+
+.margenredes img{
+    margin-right: 30px;
+}
+
+.productos{
+    margin: 50px 50px 50px 50px;
+}
+
+.tarjeta{
+    width: 300px;
+}
+
+.tarjeta-abajo{
+    border: 1px solid rgb(134, 134, 134);
+    border-top: none;
+}
+
+.tarjeta-abajo button{
+    margin: 5px 0 10px 0;
+}
+
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cajacantidad{
+    margin: 70px;
+}
+
+.cajacantidad div{
+    margin-bottom: 30px;
+}
+
+.tamaño-cantidad{
+    width: 60px;
+}
+
+.centrado-tabla{
+    display: flex;
+    align-items: center;
+}
+
+.centrado-tabla p{
+    margin-left: 20px;
+}
+
+#centrado-titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7vh;
+}
+
+#centrado-titulo h1{
+    margin-bottom: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #866053;
+}
+
+a:hover{
+    color: #583f37;
+}
+
+.fondosesion{
+    padding: 50px 0 50px 0;
+}
+
+.cajasesion{
+    width: 500px;
+    border-radius: 10px;
+    border: solid #dee2e685;
+    border-width: 1px;
+    padding: 1.5rem;
+    background-color: rgb(255, 255, 255);
+}
+
+#texto-cuenta-nueva{
+    margin-top: 15px;
+}
+
+#texto-cuenta-nueva p{
+    font-size: 20px;
+}
+
+.titulo-registro{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cajasesion h3{
+    font-family: 'Dancing Script', cursive;
+}
+
+.tabla-con-scroll {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+#eliminarcarrito{
+    font-size: 25px;
+}
+
+#botones-pago{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.pago-boton{
+    width: auto !important;
+}
+
+.label-total{
+    font-size: 20px;
+}
+
+.tamano-total{
+    width: 100px;
+}
+
+.direccion{
+    width: 500px;
+}
+
+.filaPrincipal{
+    cursor: pointer;
+}
+
+.subfila {
+    display: none;
+}
