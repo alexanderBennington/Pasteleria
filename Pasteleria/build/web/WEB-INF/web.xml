@@ -36,6 +36,30 @@
         <servlet-name>TarjetaC</servlet-name>
         <servlet-class>Controlador.TarjetaC</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginAdminC</servlet-name>
+        <servlet-class>Controlador.LoginAdminC</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>cerrarSesionAdminC</servlet-name>
+        <servlet-class>Controlador.cerrarSesionAdminC</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConfirmarPedidoC</servlet-name>
+        <servlet-class>Controlador.ConfirmarPedidoC</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConfirmarEntrega</servlet-name>
+        <servlet-class>Controlador.ConfirmarEntrega</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConfirmarEntregaC</servlet-name>
+        <servlet-class>Controlador.ConfirmarEntregaC</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CancelarEntregaC</servlet-name>
+        <servlet-class>Controlador.CancelarEntregaC</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginC</servlet-name>
         <url-pattern>/LoginC</url-pattern>
@@ -71,6 +95,30 @@
     <servlet-mapping>
         <servlet-name>TarjetaC</servlet-name>
         <url-pattern>/TarjetaC</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginAdminC</servlet-name>
+        <url-pattern>/LoginAdminC</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cerrarSesionAdminC</servlet-name>
+        <url-pattern>/cerrarSesionAdminC</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConfirmarPedidoC</servlet-name>
+        <url-pattern>/ConfirmarPedidoC</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConfirmarEntrega</servlet-name>
+        <url-pattern>/ConfirmarEntrega</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConfirmarEntregaC</servlet-name>
+        <url-pattern>/ConfirmarEntregaC</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CancelarEntregaC</servlet-name>
+        <url-pattern>/CancelarEntregaC</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -2,26 +2,25 @@ package DAO;
 
 import Modelo.ConexionDB;
 import Modelo.Persona;
-import Modelo.Validar;
+import Modelo.ValidarAdmin;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
-public class PersonaDAO implements Validar {
-    private static final String VALIDATION_QUERY = "SELECT * FROM usuarios WHERE correo=? AND clave=?";
+public class LoginAdminDAO implements ValidarAdmin {
+    private static final String VALIDATION_ADMIN_QUERY = "SELECT * FROM administracion WHERE correo = ? AND clave = ?";
     
     @Override
-    public int validar(Persona per) {
+    public boolean validarAdmin(Persona per){
         ConexionDB conexion = new ConexionDB();
         int r = 0;
-        try (PreparedStatement ps = conexion.getConnection().prepareStatement(VALIDATION_QUERY)) {
+        try (PreparedStatement ps = conexion.getConnection().prepareStatement(VALIDATION_ADMIN_QUERY)) {
             ps.setString(1, per.getCorreo());
             ps.setString(2, per.getClave());
             try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
                     r++;
-                    per.setId_usuario(rs.getInt("id_usuario"));
+                    per.setId_usuario(rs.getInt("id_administrador"));
                     per.setNombre(rs.getString("nombre"));
                     per.setApellido_paterno(rs.getString("apellido_paterno"));
                     per.setApellido_materno(rs.getString("apellido_materno"));
@@ -31,13 +30,13 @@ public class PersonaDAO implements Validar {
                 }
             }
             if (r == 1) {
-                return 1;
+                return true;
             } else {
-                return 0;
+                return false;
             }
         } catch (SQLException e) {
             System.out.println("Error al validar usuario: " + e.getMessage());
-            return 0;
+            return false;
         } finally{
             conexion.closeConnection();
         }
