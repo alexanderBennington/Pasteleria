@@ -23,6 +23,7 @@
                 <div><h4><%= producto.getNombre() %></h4></div>
                 <div><h5>Diametro: <%= producto.getTamaño() %></h5></div>
                 <div><h5>Precio C/U: $<%= producto.getPrecio() %></h5></div>
+                <div><h5>Disponibles: <%= producto.getStock() %></h5></div>
                 <form action="addCart" method="post">
                     <input type="hidden" value="<%= producto.getId_producto() %>" name="id_producto">
                     <div class="row g-3 align-items-center">
@@ -30,7 +31,7 @@
                             <label for="cantidad" class="col-form-label">Cantidad &nbsp;</label>
                         </div>
                         <div class="col-auto">
-                            <input type="number" value="1" min="1" id="cantidad" name="cantidad" class="form-control tamaño-cantidad">
+                            <input type="number" value="1" min="1" max="<%= producto.getStock() %>" id="cantidad" name="cantidad" class="form-control tamaño-cantidad">
                         </div>
                     </div>
                     <button type="submit" class="btn btn-outline-dark">Agregar al carrito</button>

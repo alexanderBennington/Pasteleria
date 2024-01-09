@@ -8,6 +8,7 @@ public class PagoEM extends ConexionDB{
     private static final String INSERT_PEDIDO_QUERY = "INSERT INTO pedidos (id_pedido, id_usuario, direccion_envio, total) VALUES (?, ?, ?, ?)";
     private static final String INSERT_PRODUCTOS_QUERY = "INSERT INTO compras (id_pedido, id_producto, cantidad) VALUES (?, ?, ?)";
     private static final String INSERT_CONFRIMACION_QUERY = "INSERT INTO confirmaciones (id_pedido, estado, pagado) VALUES (?, 'PENDIENTE', 'NO')";
+    private static final String UPDATE_STOCK_QUERY = "UPDATE pasteles set stock = stock - ? WHERE id_producto = ?";
     
     public String realizarpedido(int id_usuario, String direccion, float total){
         String id_pedido = UUID.randomUUID().toString();
@@ -40,6 +41,16 @@ public class PagoEM extends ConexionDB{
             ps.executeUpdate();
         } catch (SQLException e) {
             System.out.println("Error al ingresar pedido: " + e.getMessage());
+        }
+    }
+    
+    public void actualizarStock(Producto producto, Articulo articulo){
+        try (PreparedStatement ps = getConnection().prepareStatement(UPDATE_STOCK_QUERY)) {
+            ps.setInt(1, articulo.getCantidad());
+            ps.setString(2, producto.getId_producto());
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error al actualizar stock: " + e.getMessage());
         }
     }
     

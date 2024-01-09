@@ -10,7 +10,7 @@ public class SugerenciasM {
     private static final String VALIDATION_CATEGORIAS_QUERY = "SELECT p.categoria FROM pasteles p JOIN compras c ON p.id_producto = c.id_producto "
             + "JOIN pedidos pe ON pe.id_pedido = c.id_pedido WHERE pe.id_usuario = ? ORDER BY id_compra DESC LIMIT 1;";
     
-    private static final String VALIDATION_PRODUCTOS_QUERY = "SELECT * FROM PASTELES";
+    private static final String VALIDATION_PRODUCTOS_QUERY = "SELECT * FROM PASTELES WHERE stock > 0";
     
     public List<String> obtenerCategorias(int id_usuario){
         List<String> listaCategorias = new ArrayList<>();

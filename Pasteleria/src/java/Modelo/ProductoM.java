@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ProductoM extends ConexionDB{
-    private static final String VALIDATION_QUERY = "SELECT * FROM pasteles";
+    private static final String VALIDATION_QUERY = "SELECT * FROM pasteles WHERE stock > 0";
     private static final String VALIDATION_QUERY_2 = "SELECT * FROM pasteles WHERE id_producto = ?";
     
     public ArrayList<Producto>getAllProductos(){
@@ -16,7 +16,7 @@ public class ProductoM extends ConexionDB{
                 while (rs.next()) {
                     productos.add(new Producto(
                         rs.getString("id_producto"), rs.getString("nombre"), rs.getString("img_producto"),
-                        rs.getString("categoria"), rs.getFloat("precio"), rs.getString("tamaño")));
+                        rs.getString("categoria"), rs.getFloat("precio"), rs.getString("tamaño"), rs.getInt("stock")));
                 }
             }
         } catch(SQLException e) {
@@ -35,7 +35,7 @@ public class ProductoM extends ConexionDB{
                 while (rs.next()) {
                     producto = new Producto(
                         rs.getString("id_producto"), rs.getString("nombre"), rs.getString("img_producto"),
-                        rs.getString("categoria"), rs.getFloat("precio"), rs.getString("tamaño"));
+                        rs.getString("categoria"), rs.getFloat("precio"), rs.getString("tamaño"), rs.getInt("stock"));
                 }
             }
         } catch(SQLException e) {

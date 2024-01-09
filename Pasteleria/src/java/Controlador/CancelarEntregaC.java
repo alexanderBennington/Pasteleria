@@ -16,6 +16,7 @@ public class CancelarEntregaC extends HttpServlet {
         
         EnviosM em = new EnviosM();
         em.cancelarEnvio(id_pedido);
+        em.actualizarStock(id_pedido);
         
         response.sendRedirect("enviosadmin.jsp?cancelar=true");
     }

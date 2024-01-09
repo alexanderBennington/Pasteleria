@@ -7,14 +7,16 @@ public class Producto {
     private String categoria;
     private float precio;
     private String tamaño;
+    private int stock;
 
-    public Producto(String id_producto, String nombre, String img_producto, String categoria, float precio, String tamaño) {
+    public Producto(String id_producto, String nombre, String img_producto, String categoria, float precio, String tamaño, int stock) {
         this.id_producto = id_producto;
         this.nombre = nombre;
         this.img_producto = img_producto;
         this.categoria = categoria;
         this.precio = precio;
         this.tamaño = tamaño;
+        this.stock = stock;
     }
     
     public Producto(){
@@ -68,5 +70,14 @@ public class Producto {
     public void setTamaño(String tamaño) {
         this.tamaño = tamaño;
     }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+    
     
 }

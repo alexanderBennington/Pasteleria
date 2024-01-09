@@ -15,6 +15,7 @@ public class cancelarPedidoC extends HttpServlet {
         String id_pedido = request.getParameter("id_pedido");
         cancelarPedidoM cancelar = new cancelarPedidoM();
         cancelar.cancelarPedido(id_pedido);
+        cancelar.actualizarStock(id_pedido);
         
         response.sendRedirect("pedidos.jsp?cancelado=true");
     }

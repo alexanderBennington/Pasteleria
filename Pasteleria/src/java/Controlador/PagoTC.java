@@ -33,6 +33,7 @@ public class PagoTC extends HttpServlet {
             for(Articulo a: articulos){
                 Producto producto = pc.getProducto(a.getId_producto());
                 pem.insertarproductos(id_pedido, producto, a);
+                pem.actualizarStock(producto, a);
             }
             
             pem.cerrarconexion();
