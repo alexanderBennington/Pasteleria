@@ -40,13 +40,16 @@
                 <th scope="row" class="centrado-tabla"><img src="img/productos/<%= producto.getImg_producto() %>" alt="" width="150" height="150"><p><%= producto.getNombre() %></p></th>
                 <td>$<%= producto.getPrecio() %></td>
                 <td>
-                    <div class="col-auto">
-                        <input type="text" value="<%= a.getCantidad() %>" id="cantidad" class="form-control tamaño-cantidad" readonly>
+                    <div class="col-auto" style="display:flex;">
+                        <a href="RestarCantidad?idarticulo=<%= producto.getId_producto() %>" class="botonRestar"><button class="btn btn-lg">-</button></a>
+                        <input type="text" value="<%= a.getCantidad() %>" id="cantidad" class="form-control tamaño-cantidad clase-cantidad" readonly>
+                        <a href="SumarCantidad?idarticulo=<%= producto.getId_producto() %>" class="botonSumar"><button class="btn btn-lg">+</button></a>
                     </div>
                 </td>
                 <td><%= producto.getPrecio() * a.getCantidad() %></td>
                 <td>
                     <span id="idarticulo" style="display: none;"><%= producto.getId_producto() %></span>
+                    <input type="hidden" class="stockProducto" value="<%= producto.getStock() %>">
                     <a href="" id="eliminarcarrito">x</a>
                 </td>
             </tr>
@@ -63,7 +66,7 @@
     </div>
     <div>
         <label for="direccionenvio">Dirección de envio:</label>
-        <input type="text" id="direccionenvio" placeholder="Favor de indicar No. de casa, ciudad, C.P." class="form-control direccion">
+        <input type="text" id="direccionenvio" placeholder="Favor de indicar: Dirección, No. de casa, ciudad, C.P." class="form-control direccion">
     </div>
     <div id="botones-pago" class="row g-3 align-items-center">
         <form action="PagoEC" method="post" class="pago-boton">
@@ -98,5 +101,30 @@
         if (!confirm("¿Estás seguro de querer pagar con tarjeta?")) {
             event.preventDefault();
         }
+    });
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        var cantidades = document.querySelectorAll('.clase-cantidad');
+        var botonesRestar = document.querySelectorAll('.botonRestar');
+        var botonesSumar = document.querySelectorAll('.botonSumar');
+        var stock = document.querySelectorAll('.stockProducto');
+
+        cantidades.forEach(function (cantidad, index) {
+            var stockProducto = parseInt(stock[index].value);
+            console.log(stockProducto);
+            if (cantidad.value == 1) {
+                botonesRestar[index].style.display = 'none';
+            }
+            if (cantidad.value >= stockProducto) {
+                botonesSumar[index].style.display = 'none';
+            }
+
+            cantidad.addEventListener('input', function () {
+                botonesRestar[index].style.display = (cantidad.value == 1) ? 'none' : 'inline';
+            });
+            cantidad.addEventListener('input', function () {
+                botonesSumar[index].style.display = (cantidad.value >= stockProducto) ? 'none' : 'inline';
+            });
+        });
     });
 </script>

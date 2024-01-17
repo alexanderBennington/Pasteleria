@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function validarInput(input) {
-        if (input.value < 1) {
-        input.value = 1;
+        if (input.value < 0) {
+        input.value = 0;
         }
     }
 });

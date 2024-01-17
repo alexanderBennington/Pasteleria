@@ -60,6 +60,14 @@
         <servlet-name>CancelarEntregaC</servlet-name>
         <servlet-class>Controlador.CancelarEntregaC</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SumarCantidad</servlet-name>
+        <servlet-class>Controlador.SumarCantidad</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RestarCantidad</servlet-name>
+        <servlet-class>Controlador.RestarCantidad</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginC</servlet-name>
         <url-pattern>/LoginC</url-pattern>
@@ -119,6 +127,14 @@
     <servlet-mapping>
         <servlet-name>CancelarEntregaC</servlet-name>
         <url-pattern>/CancelarEntregaC</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SumarCantidad</servlet-name>
+        <url-pattern>/SumarCantidad</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RestarCantidad</servlet-name>
+        <url-pattern>/RestarCantidad</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
